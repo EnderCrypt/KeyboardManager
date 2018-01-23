@@ -69,6 +69,7 @@ public class KeyboardManager
 		{
 			keysDown.add(keyCode);
 		}
+		trigger(createKeyboardEvent(keyCode, BindType.PRESS));
 	}
 
 	private void keyRelease(int keyCode)
@@ -77,6 +78,7 @@ public class KeyboardManager
 		{
 			keysDown.remove(keyCode);
 		}
+		trigger(createKeyboardEvent(keyCode, BindType.RELEASE));
 	}
 
 	public void bind(KeyboardBindFilter keyboardBindFilter, KeyboardListener keyboardListener)
@@ -128,7 +130,6 @@ public class KeyboardManager
 		{
 			int keyCode = e.getKeyCode();
 			keyPress(keyCode);
-			trigger(createKeyboardEvent(keyCode, BindType.PRESS));
 		}
 
 		@Override
@@ -136,7 +137,6 @@ public class KeyboardManager
 		{
 			int keyCode = e.getKeyCode();
 			keyRelease(keyCode);
-			trigger(createKeyboardEvent(keyCode, BindType.RELEASE));
 		}
 	}
 }
