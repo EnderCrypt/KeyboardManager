@@ -1,7 +1,7 @@
 package net.ddns.endercrypt.library.keyboardmanager;
 
 /**
- * enum for usage in binding keytypes, Press, Hold, Release
+ * enum for choosing bindtypes (Press, Hold, Release)
  * @author EnderCrypt
  */
 public enum BindType
