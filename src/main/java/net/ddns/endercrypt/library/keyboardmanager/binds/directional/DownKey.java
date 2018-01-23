@@ -1,8 +1,8 @@
-package net.ddns.endertsion.gameengine.keyboard.binds.directional;
+package net.ddns.endercrypt.library.keyboardmanager.binds.directional;
 
 import java.awt.event.KeyEvent;
 
-import net.ddns.endertsion.gameengine.keyboard.BindType;
+import net.ddns.endercrypt.library.keyboardmanager.BindType;
 
 /**
  * keybind for the down arrow OR S key (as in WASD)

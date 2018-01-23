@@ -1,6 +1,6 @@
-package net.ddns.endertsion.gameengine.keyboard.binds;
+package net.ddns.endercrypt.library.keyboardmanager.binds;
 
-import net.ddns.endertsion.gameengine.keyboard.KeyboardEvent;
+import net.ddns.endercrypt.library.keyboardmanager.KeyboardEvent;
 
 /**
  * implementable interface for creating custom keybinds

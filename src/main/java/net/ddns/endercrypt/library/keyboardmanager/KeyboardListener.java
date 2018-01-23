@@ -1,4 +1,4 @@
-package net.ddns.endertsion.gameengine.keyboard;
+package net.ddns.endercrypt.library.keyboardmanager;
 
 /**
  * implementable method for creating keylistener callbacks

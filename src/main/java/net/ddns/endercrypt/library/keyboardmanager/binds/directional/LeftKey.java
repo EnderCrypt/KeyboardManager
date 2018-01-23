@@ -1,8 +1,8 @@
-package net.ddns.endertsion.gameengine.keyboard.binds.directional;
+package net.ddns.endercrypt.library.keyboardmanager.binds.directional;
 
 import java.awt.event.KeyEvent;
 
-import net.ddns.endertsion.gameengine.keyboard.BindType;
+import net.ddns.endercrypt.library.keyboardmanager.BindType;
 
 /**
  * keybind for the left arrow OR A key (as in WASD)

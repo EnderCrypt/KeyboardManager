@@ -1,4 +1,4 @@
-package net.ddns.endertsion.gameengine.keyboard;
+package net.ddns.endercrypt.library.keyboardmanager;
 
 /**
  * enum for usage in binding keytypes, Press, Hold, Release

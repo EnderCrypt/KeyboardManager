@@ -1,10 +1,10 @@
-package net.ddns.endertsion.gameengine.keyboard.binds;
+package net.ddns.endercrypt.library.keyboardmanager.binds;
 
 import java.awt.event.KeyEvent;
 
-import net.ddns.endertsion.gameengine.keyboard.BindType;
-import net.ddns.endertsion.gameengine.keyboard.KeyboardBindFilter;
-import net.ddns.endertsion.gameengine.keyboard.KeyboardEvent;
+import net.ddns.endercrypt.library.keyboardmanager.BindType;
+import net.ddns.endercrypt.library.keyboardmanager.KeyboardBindFilter;
+import net.ddns.endercrypt.library.keyboardmanager.KeyboardEvent;
 
 /**
  * Keybind for a single key

@@ -1,8 +1,8 @@
-package net.ddns.endertsion.gameengine.keyboard.binds.directional;
+package net.ddns.endercrypt.library.keyboardmanager.binds.directional;
 
-import net.ddns.endertsion.gameengine.keyboard.BindType;
-import net.ddns.endertsion.gameengine.keyboard.binds.MultiKey;
-import net.ddns.endertsion.gameengine.keyboard.binds.SpecificKey;
+import net.ddns.endercrypt.library.keyboardmanager.BindType;
+import net.ddns.endercrypt.library.keyboardmanager.binds.MultiKey;
+import net.ddns.endercrypt.library.keyboardmanager.binds.SpecificKey;
 
 /**
  * abstract helper class for implementing directional keybinds
