@@ -5,6 +5,11 @@ import java.awt.event.KeyEvent;
 import net.ddns.endertsion.gameengine.keyboard.BindType;
 import net.ddns.endertsion.gameengine.keyboard.KeyboardEvent;
 
+/**
+ * keybind for all the letters of the keyboard
+ * @author EnderCrypt
+ * @see KeyEvent
+ */
 public class AnyLetters extends BindRange
 {
 	private boolean allowSpace;

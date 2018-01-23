@@ -1,8 +1,15 @@
 package net.ddns.endertsion.gameengine.keyboard.binds;
 
+import java.awt.event.KeyEvent;
+
 import net.ddns.endertsion.gameengine.keyboard.BindType;
 import net.ddns.endertsion.gameengine.keyboard.KeyboardEvent;
 
+/**
+ * keybind for multiple keys
+ * @author EnderCrypt
+ * @see KeyEvent
+ */
 public class MultiKey implements KeyboardBindFilter
 {
 	private BindType bindType;
