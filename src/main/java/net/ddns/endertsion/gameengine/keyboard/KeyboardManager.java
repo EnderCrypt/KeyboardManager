@@ -76,7 +76,6 @@ public class KeyboardManager
 		synchronized (keysDown)
 		{
 			keysDown.remove(keyCode);
-			//keysDown.removeIf((num) -> num == keyCode);
 		}
 	}
 
