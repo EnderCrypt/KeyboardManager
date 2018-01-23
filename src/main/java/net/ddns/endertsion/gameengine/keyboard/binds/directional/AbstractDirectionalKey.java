@@ -4,6 +4,10 @@ import net.ddns.endertsion.gameengine.keyboard.BindType;
 import net.ddns.endertsion.gameengine.keyboard.binds.MultiKey;
 import net.ddns.endertsion.gameengine.keyboard.binds.SpecificKey;
 
+/**
+ * abstract helper class for implementing directional keybinds
+ * @author EnderCrypt
+ */
 public class AbstractDirectionalKey extends MultiKey
 {
 	protected AbstractDirectionalKey(BindType bindType, int... keys)
