@@ -1,9 +1,16 @@
 package net.ddns.endertsion.gameengine.keyboard.binds;
 
+import java.awt.event.KeyEvent;
+
 import net.ddns.endertsion.gameengine.keyboard.BindType;
 import net.ddns.endertsion.gameengine.keyboard.KeyboardBindFilter;
 import net.ddns.endertsion.gameengine.keyboard.KeyboardEvent;
 
+/**
+ * Keybind for a single key
+ * @author EnderCrypt
+ * @see KeyEvent
+ */
 public class SpecificKey implements KeyboardBindFilter
 {
 	private BindType bindType;

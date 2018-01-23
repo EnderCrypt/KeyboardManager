@@ -15,12 +15,22 @@ public class KeyboardManager
 
 	private Set<Integer> keysDown = new HashSet<>();
 
+	/**
+	 * installs listeners on a JFrame
+	 * 
+	 * @param jFrame
+	 */
 	public void install(JFrame jFrame)
 	{
 		jFrame.setFocusTraversalKeysEnabled(false);
 		jFrame.addKeyListener(new InternalKeyboardListener());
 	}
 
+	/**
+	 * checks which keys are being held down, and triggers the callback
+	 * this method should problably be called 30 or 60 times a second, depending on how many
+	 * times you want HOLD listeners to trigger
+	 */
 	public void triggerHeldKeys()
 	{
 		synchronized (keysDown)
@@ -32,6 +42,11 @@ public class KeyboardManager
 		}
 	}
 
+	/**
+	 * checks if a specific key (KeyCode) i being held down
+	 * @param keyCode
+	 * @return
+	 */
 	public boolean keyIsHeld(int keyCode)
 	{
 		synchronized (keysDown)
@@ -47,6 +62,10 @@ public class KeyboardManager
 		}
 	}
 
+	/**
+	 * simulates a keyboard event (pres, releae, hold)
+	 * @param keyboardEvent
+	 */
 	private void trigger(KeyboardEvent keyboardEvent)
 	{
 		for (Binding binding : bindings)
@@ -61,6 +80,10 @@ public class KeyboardManager
 		}
 	}
 
+	/**
+	 * changes the internal state to hold a specific key down
+	 * @param keyCode
+	 */
 	private void keyPress(int keyCode)
 	{
 		synchronized (keysDown)
@@ -70,6 +93,10 @@ public class KeyboardManager
 		trigger(createKeyboardEvent(keyCode, BindType.PRESS));
 	}
 
+	/**
+	 * changes the internal state to release a specific key down
+	 * @param keyCode
+	 */
 	private void keyRelease(int keyCode)
 	{
 		synchronized (keysDown)
@@ -79,6 +106,11 @@ public class KeyboardManager
 		trigger(createKeyboardEvent(keyCode, BindType.RELEASE));
 	}
 
+	/**
+	 * method for binding a key stroke (or multiple) to a callback listener
+	 * @param keyboardBindFilter such a <code>new SpecificKey</code> or <code>new LeftKey</code>
+	 * @param keyboardListener
+	 */
 	public void bind(KeyboardBindFilter keyboardBindFilter, KeyboardListener keyboardListener)
 	{
 		synchronized (bindings)
@@ -87,11 +119,20 @@ public class KeyboardManager
 		}
 	}
 
+	/**
+	 * clears all the current keybindings
+	 */
 	public void resetBinds()
 	{
 		bindings.clear();
 	}
 
+	/**
+	 * creates a new KeyboardEvent instance
+	 * @param keyCode
+	 * @param bindType
+	 * @return
+	 */
 	private KeyboardEvent createKeyboardEvent(int keyCode, BindType bindType)
 	{
 		return new KeyboardEvent(keyCode, bindType, this);
@@ -103,6 +144,10 @@ public class KeyboardManager
 		return getClass().getSimpleName() + " [keysDown=" + keysDown + "]";
 	}
 
+	/**
+	 * inner class representing a keybind + callback
+	 * @author EnderCrypt
+	 */
 	private class Binding
 	{
 		private final KeyboardBindFilter keyboardBindFilter;
@@ -115,6 +160,10 @@ public class KeyboardManager
 		}
 	}
 
+	/**
+	 * keylistener for installing into a JFrame
+	 * @author EnderCrypt
+	 */
 	private class InternalKeyboardListener implements KeyListener
 	{
 		@Override
