@@ -67,10 +67,7 @@ public class KeyboardManager
 	{
 		synchronized (keysDown)
 		{
-			// if (keysDown.contains(keyCode) == false)
-			// {
 			keysDown.add(keyCode);
-			// }
 		}
 	}
 
