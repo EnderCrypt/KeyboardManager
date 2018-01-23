@@ -6,7 +6,7 @@ public class KeyboardEvent
 {
 	private int keyCode;
 	private BindType bindType;
-	private boolean shift, ctrl, meta;
+	private boolean shift, ctrl, alt, meta;
 
 	public KeyboardEvent(int keyCode, BindType bindType, KeyboardManager keyboardManager)
 	{
@@ -15,6 +15,7 @@ public class KeyboardEvent
 
 		shift = keyboardManager.keyIsHeld(KeyEvent.VK_SHIFT);
 		ctrl = keyboardManager.keyIsHeld(KeyEvent.VK_CONTROL);
+		alt = keyboardManager.keyIsHeld(KeyEvent.VK_ALT);
 		meta = keyboardManager.keyIsHeld(KeyEvent.VK_META);
 	}
 
@@ -36,6 +37,11 @@ public class KeyboardEvent
 	public boolean isCtrlHeld()
 	{
 		return ctrl;
+	}
+
+	public boolean isAltHeld()
+	{
+		return alt;
 	}
 
 	public boolean isMetaHeld()
