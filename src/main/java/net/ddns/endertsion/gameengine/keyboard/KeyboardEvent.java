@@ -23,7 +23,7 @@ public class KeyboardEvent
 	}
 
 	/**
-	 * returns the keycode, this can be an ASCII value or a code from {@link KeyEvent}
+	 * returns the keycode, this is a code from {@link KeyEvent}
 	 * @return numeric KeyEvent
 	 */
 	public int getKeyCode()
