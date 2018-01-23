@@ -9,8 +9,6 @@ import java.util.Set;
 
 import javax.swing.JFrame;
 
-import net.ddns.endertsion.gameengine.keyboard.binds.KeyboardBindFilter;
-
 public class KeyboardManager
 {
 	private List<Binding> bindings = new ArrayList<>();
