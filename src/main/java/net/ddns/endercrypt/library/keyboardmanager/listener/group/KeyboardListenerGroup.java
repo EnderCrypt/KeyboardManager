@@ -1,9 +1,9 @@
 package net.ddns.endercrypt.library.keyboardmanager.listener.group;
 
-public class ListenerGroup
+public class KeyboardListenerGroup
 {
 
-	public ListenerGroup()
+	public KeyboardListenerGroup()
 	{
 		// TODO Auto-generated constructor stub
 	}
