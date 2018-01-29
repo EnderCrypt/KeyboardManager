@@ -41,6 +41,13 @@ public class KeyboardBinding
 	 */
 	public void trigger(KeyboardEvent keyboardEvent)
 	{
-		keyboardListener.trigger(keyboardEvent);
+		try
+		{
+			keyboardListener.trigger(keyboardEvent);
+		}
+		catch (RuntimeException e)
+		{
+			e.printStackTrace();
+		}
 	}
 }
