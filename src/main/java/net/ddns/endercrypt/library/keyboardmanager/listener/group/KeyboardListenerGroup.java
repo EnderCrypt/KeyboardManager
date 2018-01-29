@@ -42,7 +42,7 @@ public class KeyboardListenerGroup
 			{
 				if (binding.getKeyboardBindFilter().check(keyboardEvent))
 				{
-					binding.getKeyboardListener().trigger(keyboardEvent);
+					binding.trigger(keyboardEvent);
 				}
 			}
 		}

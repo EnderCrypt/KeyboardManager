@@ -34,4 +34,13 @@ public class KeyboardBinding
 	{
 		return keyboardListener;
 	}
+
+	/**
+	 * triggers the keyboard listener in this bind
+	 * @param keyboardEvent
+	 */
+	public void trigger(KeyboardEvent keyboardEvent)
+	{
+		keyboardListener.trigger(keyboardEvent);
+	}
 }
