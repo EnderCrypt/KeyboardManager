@@ -47,4 +47,12 @@ public class KeyboardListenerGroup
 			}
 		}
 	}
+
+	/**
+	 * clears all the keylisteners in this keyboard listener group
+	 */
+	public void clear()
+	{
+		bindings.clear();
+	}
 }

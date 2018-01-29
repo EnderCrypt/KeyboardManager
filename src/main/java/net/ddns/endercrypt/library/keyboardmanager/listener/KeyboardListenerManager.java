@@ -76,4 +76,13 @@ public class KeyboardListenerManager
 			listenerGroup.trigger(keyboardEvent);
 		}
 	}
+
+	/**
+	 * clears all the keyboard listener groups
+	 */
+	public void clear()
+	{
+		listenerGroups.clear();
+		listenerGroups.add(globalListenerGroup);
+	}
 }
