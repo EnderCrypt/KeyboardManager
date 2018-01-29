@@ -26,6 +26,10 @@ public class KeyboardManager
 		jFrame.addKeyListener(new InternalKeyboardListener());
 	}
 
+	/**
+	 * returns the listener manager designated for this {@link KeyboardManager}
+	 * @return the Keyboard Listener Manager
+	 */
 	public KeyboardListenerManager getKeyboardListenerManager()
 	{
 		return keyboardListenerManager;
