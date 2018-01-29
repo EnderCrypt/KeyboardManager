@@ -72,7 +72,7 @@ public class KeyboardManager
 	}
 
 	/**
-	 * simulates a keyboard event (pres, releae, hold)
+	 * simulates a keyboard event (press, release, hold)
 	 * @param keyboardEvent
 	 */
 	private void trigger(KeyboardEvent keyboardEvent)
