@@ -7,10 +7,10 @@ import net.ddns.endercrypt.library.keyboardmanager.KeyboardBindFilter;
 import net.ddns.endercrypt.library.keyboardmanager.KeyboardBinding;
 import net.ddns.endercrypt.library.keyboardmanager.KeyboardEvent;
 import net.ddns.endercrypt.library.keyboardmanager.listener.KeyboardListener;
-import net.ddns.endercrypt.library.keyboardmanager.listener.KeyboardListenerManager;
+import net.ddns.endercrypt.library.keyboardmanager.listener.ListenerGroups;
 
 /**
- * class representing a group of keyboard listener, this class must be added to a {@link KeyboardListenerManager} to recieve events
+ * class representing a group of keyboard listener, this class must be added to a {@link ListenerGroups} to recieve events
  * @author EnderCrypt
  */
 public class KeyboardListenerGroup

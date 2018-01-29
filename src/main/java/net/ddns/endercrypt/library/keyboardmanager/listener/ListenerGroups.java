@@ -17,13 +17,13 @@ import net.ddns.endercrypt.library.keyboardmanager.listener.group.KeyboardListen
  * it cannot be disabled or re-enabled
  * @author EnderCrypt
  */
-public class KeyboardListenerManager
+public class ListenerGroups
 {
 	private KeyboardListenerGroup globalListenerGroup = new KeyboardListenerGroup();
 
 	private Set<KeyboardListenerGroup> listenerGroups = new HashSet<>();
 
-	public KeyboardListenerManager()
+	public ListenerGroups()
 	{
 		listenerGroups.add(globalListenerGroup);
 	}
@@ -32,7 +32,7 @@ public class KeyboardListenerManager
 	 * returns the global listener group, this group cant be removed/added
 	 * @return
 	 */
-	public KeyboardListenerGroup getGlobalGroup()
+	public KeyboardListenerGroup getGlobal()
 	{
 		return globalListenerGroup;
 	}

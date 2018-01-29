@@ -7,13 +7,13 @@ import java.util.Set;
 
 import javax.swing.JFrame;
 
-import net.ddns.endercrypt.library.keyboardmanager.listener.KeyboardListenerManager;
+import net.ddns.endercrypt.library.keyboardmanager.listener.ListenerGroups;
 
 public class KeyboardManager
 {
 	private Set<Integer> keysDown = new HashSet<>();
 
-	private KeyboardListenerManager keyboardListenerManager = new KeyboardListenerManager();
+	private ListenerGroups keyboardListenerGroups = new ListenerGroups();
 
 	/**
 	 * installs listeners on a JFrame
@@ -30,9 +30,9 @@ public class KeyboardManager
 	 * returns the listener manager designated for this {@link KeyboardManager}
 	 * @return the Keyboard Listener Manager
 	 */
-	public KeyboardListenerManager getKeyboardListenerManager()
+	public ListenerGroups getListenerGroups()
 	{
-		return keyboardListenerManager;
+		return keyboardListenerGroups;
 	}
 
 	/**
@@ -77,7 +77,7 @@ public class KeyboardManager
 	 */
 	private void trigger(KeyboardEvent keyboardEvent)
 	{
-		keyboardListenerManager.trigger(keyboardEvent);
+		keyboardListenerGroups.trigger(keyboardEvent);
 	}
 
 	/**
