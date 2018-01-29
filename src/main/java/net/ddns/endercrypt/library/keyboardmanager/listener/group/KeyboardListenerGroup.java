@@ -7,7 +7,12 @@ import net.ddns.endercrypt.library.keyboardmanager.KeyboardBindFilter;
 import net.ddns.endercrypt.library.keyboardmanager.KeyboardBinding;
 import net.ddns.endercrypt.library.keyboardmanager.KeyboardEvent;
 import net.ddns.endercrypt.library.keyboardmanager.listener.KeyboardListener;
+import net.ddns.endercrypt.library.keyboardmanager.listener.KeyboardListenerManager;
 
+/**
+ * class representing a group of keyboard listener, this class must be added to a {@link KeyboardListenerManager} to recieve events
+ * @author EnderCrypt
+ */
 public class KeyboardListenerGroup
 {
 	private Set<KeyboardBinding> bindings = new HashSet<>();
@@ -25,6 +30,10 @@ public class KeyboardListenerGroup
 		}
 	}
 
+	/**
+	 * simulates a key press by passing the {@link KeyboardEvent} into any active keyboard listeners
+	 * @param keyboardEvent
+	 */
 	public void trigger(KeyboardEvent keyboardEvent)
 	{
 		synchronized (bindings)
