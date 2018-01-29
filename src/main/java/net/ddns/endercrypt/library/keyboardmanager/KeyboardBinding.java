@@ -17,11 +17,19 @@ public class KeyboardBinding
 		this.keyboardListener = keyboardListener;
 	}
 
+	/**
+	 * getter for the KeyboardFilter
+	 * @return the KeyboardBindFilter
+	 */
 	public KeyboardBindFilter getKeyboardBindFilter()
 	{
 		return keyboardBindFilter;
 	}
 
+	/**
+	 * getter for the KeyboardListener
+	 * @return the KeyboardListener
+	 */
 	public KeyboardListener getKeyboardListener()
 	{
 		return keyboardListener;
