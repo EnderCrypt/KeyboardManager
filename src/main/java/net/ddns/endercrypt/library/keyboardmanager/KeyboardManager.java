@@ -2,18 +2,18 @@ package net.ddns.endercrypt.library.keyboardmanager;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import javax.swing.JFrame;
 
+import net.ddns.endercrypt.library.keyboardmanager.listener.KeyboardListenerManager;
+
 public class KeyboardManager
 {
-	private List<KeyboardBinding> bindings = new ArrayList<>();
-
 	private Set<Integer> keysDown = new HashSet<>();
+
+	private KeyboardListenerManager keyboardListenerManager = new KeyboardListenerManager();
 
 	/**
 	 * installs listeners on a JFrame
@@ -24,6 +24,11 @@ public class KeyboardManager
 	{
 		jFrame.setFocusTraversalKeysEnabled(false);
 		jFrame.addKeyListener(new InternalKeyboardListener());
+	}
+
+	public KeyboardListenerManager getKeyboardListenerManager()
+	{
+		return keyboardListenerManager;
 	}
 
 	/**
@@ -68,13 +73,7 @@ public class KeyboardManager
 	 */
 	private void trigger(KeyboardEvent keyboardEvent)
 	{
-		for (KeyboardBinding binding : bindings)
-		{
-			if (binding.getKeyboardBindFilter().check(keyboardEvent))
-			{
-				binding.getKeyboardListener().trigger(keyboardEvent);
-			}
-		}
+		keyboardListenerManager.trigger(keyboardEvent);
 	}
 
 	/**
@@ -101,14 +100,6 @@ public class KeyboardManager
 			keysDown.remove(keyCode);
 		}
 		trigger(createKeyboardEvent(keyCode, BindType.RELEASE));
-	}
-
-	/**
-	 * clears all the current keybindings
-	 */
-	public void resetBinds()
-	{
-		bindings.clear();
 	}
 
 	/**
