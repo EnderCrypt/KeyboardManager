@@ -109,19 +109,6 @@ public class KeyboardManager
 	}
 
 	/**
-	 * method for binding a key stroke (or multiple) to a callback listener
-	 * @param keyboardBindFilter such a <code>new SpecificKey</code> or <code>new LeftKey</code>
-	 * @param keyboardListener
-	 */
-	public void bind(KeyboardBindFilter keyboardBindFilter, KeyboardListener keyboardListener)
-	{
-		synchronized (bindings)
-		{
-			bindings.add(new Binding(keyboardBindFilter, keyboardListener));
-		}
-	}
-
-	/**
 	 * clears all the current keybindings
 	 */
 	public void resetBinds()
