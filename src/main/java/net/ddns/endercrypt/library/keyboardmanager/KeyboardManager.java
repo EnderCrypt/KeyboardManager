@@ -2,18 +2,18 @@ package net.ddns.endercrypt.library.keyboardmanager;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 import javax.swing.JFrame;
 
+import net.ddns.endercrypt.library.keyboardmanager.listener.KeyboardListenerManager;
+
 public class KeyboardManager
 {
-	private List<Binding> bindings = new ArrayList<>();
-
 	private Set<Integer> keysDown = new HashSet<>();
+
+	private KeyboardListenerManager keyboardListenerManager = new KeyboardListenerManager();
 
 	/**
 	 * installs listeners on a JFrame
@@ -24,6 +24,11 @@ public class KeyboardManager
 	{
 		jFrame.setFocusTraversalKeysEnabled(false);
 		jFrame.addKeyListener(new InternalKeyboardListener());
+	}
+
+	public KeyboardListenerManager getKeyboardListenerManager()
+	{
+		return keyboardListenerManager;
 	}
 
 	/**
@@ -68,16 +73,7 @@ public class KeyboardManager
 	 */
 	private void trigger(KeyboardEvent keyboardEvent)
 	{
-		for (Binding binding : bindings)
-		{
-			KeyboardBindFilter filter = binding.keyboardBindFilter;
-			KeyboardListener listener = binding.keyboardListener;
-
-			if (filter.check(keyboardEvent))
-			{
-				listener.trigger(keyboardEvent);
-			}
-		}
+		keyboardListenerManager.trigger(keyboardEvent);
 	}
 
 	/**
@@ -107,27 +103,6 @@ public class KeyboardManager
 	}
 
 	/**
-	 * method for binding a key stroke (or multiple) to a callback listener
-	 * @param keyboardBindFilter such a <code>new SpecificKey</code> or <code>new LeftKey</code>
-	 * @param keyboardListener
-	 */
-	public void bind(KeyboardBindFilter keyboardBindFilter, KeyboardListener keyboardListener)
-	{
-		synchronized (bindings)
-		{
-			bindings.add(new Binding(keyboardBindFilter, keyboardListener));
-		}
-	}
-
-	/**
-	 * clears all the current keybindings
-	 */
-	public void resetBinds()
-	{
-		bindings.clear();
-	}
-
-	/**
 	 * creates a new KeyboardEvent instance
 	 * @param keyCode
 	 * @param bindType
@@ -142,22 +117,6 @@ public class KeyboardManager
 	public String toString()
 	{
 		return getClass().getSimpleName() + " [keysDown=" + keysDown + "]";
-	}
-
-	/**
-	 * inner class representing a keybind + callback
-	 * @author EnderCrypt
-	 */
-	private class Binding
-	{
-		private final KeyboardBindFilter keyboardBindFilter;
-		private final KeyboardListener keyboardListener;
-
-		private Binding(KeyboardBindFilter keyboardBindFilter, KeyboardListener keyboardListener)
-		{
-			this.keyboardBindFilter = keyboardBindFilter;
-			this.keyboardListener = keyboardListener;
-		}
 	}
 
 	/**
