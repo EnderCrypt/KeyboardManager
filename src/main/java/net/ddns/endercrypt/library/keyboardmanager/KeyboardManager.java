@@ -9,11 +9,9 @@ import java.util.Set;
 
 import javax.swing.JFrame;
 
-import net.ddns.endercrypt.library.keyboardmanager.listener.KeyboardListener;
-
 public class KeyboardManager
 {
-	private List<Binding> bindings = new ArrayList<>();
+	private List<KeyboardBinding> bindings = new ArrayList<>();
 
 	private Set<Integer> keysDown = new HashSet<>();
 
@@ -70,14 +68,11 @@ public class KeyboardManager
 	 */
 	private void trigger(KeyboardEvent keyboardEvent)
 	{
-		for (Binding binding : bindings)
+		for (KeyboardBinding binding : bindings)
 		{
-			KeyboardBindFilter filter = binding.keyboardBindFilter;
-			KeyboardListener listener = binding.keyboardListener;
-
-			if (filter.check(keyboardEvent))
+			if (binding.getKeyboardBindFilter().check(keyboardEvent))
 			{
-				listener.trigger(keyboardEvent);
+				binding.getKeyboardListener().trigger(keyboardEvent);
 			}
 		}
 	}
@@ -131,22 +126,6 @@ public class KeyboardManager
 	public String toString()
 	{
 		return getClass().getSimpleName() + " [keysDown=" + keysDown + "]";
-	}
-
-	/**
-	 * inner class representing a keybind + callback
-	 * @author EnderCrypt
-	 */
-	private class Binding
-	{
-		private final KeyboardBindFilter keyboardBindFilter;
-		private final KeyboardListener keyboardListener;
-
-		private Binding(KeyboardBindFilter keyboardBindFilter, KeyboardListener keyboardListener)
-		{
-			this.keyboardBindFilter = keyboardBindFilter;
-			this.keyboardListener = keyboardListener;
-		}
 	}
 
 	/**
