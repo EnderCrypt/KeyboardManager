@@ -40,10 +40,7 @@ public class KeyboardListenerGroup
 		{
 			for (KeyboardBinding binding : bindings)
 			{
-				if (binding.getKeyboardBindFilter().check(keyboardEvent))
-				{
-					binding.trigger(keyboardEvent);
-				}
+				binding.attemptTrigger(keyboardEvent);
 			}
 		}
 	}

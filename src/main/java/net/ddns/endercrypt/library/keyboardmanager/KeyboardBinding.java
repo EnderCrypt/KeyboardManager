@@ -18,6 +18,21 @@ public class KeyboardBinding
 	}
 
 	/**
+	 * checks if the KeyboardEvent fits this bind, if it does then it will trigger the callback and return true
+	 * @param keyboardEvent
+	 * @return true if bind fits
+	 */
+	public boolean attemptTrigger(KeyboardEvent keyboardEvent)
+	{
+		if (check(keyboardEvent))
+		{
+			trigger(keyboardEvent);
+			return true;
+		}
+		return false;
+	}
+
+	/**
 	 * getter for the KeyboardFilter
 	 * @return the KeyboardBindFilter
 	 */
