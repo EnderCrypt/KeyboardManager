@@ -1,5 +1,7 @@
 package net.ddns.endercrypt.library.keyboardmanager;
 
+import net.ddns.endercrypt.library.keyboardmanager.listener.KeyboardListener;
+
 /**
  * class representing a keybind + callback
  * @author EnderCrypt
