@@ -14,9 +14,9 @@ import net.ddns.endercrypt.library.keyboardmanager.KeyboardEvent;
 public class MultiKey implements KeyboardBindFilter
 {
 	private BindType bindType;
-	private SpecificKey[] keys;
+	private int[] keys;
 
-	public MultiKey(BindType bindType, SpecificKey... keys)
+	public MultiKey(BindType bindType, int... keys)
 	{
 		this.bindType = bindType;
 		this.keys = keys;
@@ -27,9 +27,9 @@ public class MultiKey implements KeyboardBindFilter
 	{
 		if (keyboardEvent.getBindType() == bindType)
 		{
-			for (SpecificKey specificKey : keys)
+			for (int key : keys)
 			{
-				if (specificKey.check(keyboardEvent))
+				if (keyboardEvent.getKeyCode() == key)
 				{
 					return true;
 				}
