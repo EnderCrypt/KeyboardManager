@@ -3,6 +3,7 @@ package net.ddns.endercrypt.library.keyboardmanager.listener;
 import java.util.HashSet;
 import java.util.Set;
 
+import net.ddns.endercrypt.library.keyboardmanager.KeyboardEvent;
 import net.ddns.endercrypt.library.keyboardmanager.listener.group.KeyboardListenerGroup;
 
 public class KeyboardListenerManager
@@ -37,5 +38,13 @@ public class KeyboardListenerManager
 			throw new IllegalArgumentException("Cannot remove global listener");
 		}
 		return listenerGroups.remove(globalListenerGroup);
+	}
+
+	public void trigger(KeyboardEvent keyboardEvent)
+	{
+		for (KeyboardListenerGroup listenerGroup : listenerGroups)
+		{
+			listenerGroup.trigger(keyboardEvent);
+		}
 	}
 }
