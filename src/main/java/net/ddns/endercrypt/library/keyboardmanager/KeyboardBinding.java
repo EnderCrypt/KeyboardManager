@@ -27,6 +27,16 @@ public class KeyboardBinding
 	}
 
 	/**
+	 * checks if the KeyboardEvent is appropriate for this bind using the keyboardBindFilter in this bind
+	 * @param keyboardEvent
+	 * @return
+	 */
+	public boolean check(KeyboardEvent keyboardEvent)
+	{
+		return keyboardBindFilter.check(keyboardEvent);
+	}
+
+	/**
 	 * getter for the KeyboardListener
 	 * @return the KeyboardListener
 	 */
