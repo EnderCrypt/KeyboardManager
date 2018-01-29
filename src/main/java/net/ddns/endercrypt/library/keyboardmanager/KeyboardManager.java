@@ -9,6 +9,8 @@ import java.util.Set;
 
 import javax.swing.JFrame;
 
+import net.ddns.endercrypt.library.keyboardmanager.listener.KeyboardListener;
+
 public class KeyboardManager
 {
 	private List<Binding> bindings = new ArrayList<>();

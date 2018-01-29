@@ -1,4 +1,4 @@
-package net.ddns.endercrypt.library.keyboardmanager.listenergroup;
+package net.ddns.endercrypt.library.keyboardmanager.listener.group;
 
 public class ListenerGroup
 {
