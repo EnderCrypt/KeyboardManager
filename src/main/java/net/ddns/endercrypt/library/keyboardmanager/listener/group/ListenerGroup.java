@@ -3,7 +3,14 @@ package net.ddns.endercrypt.library.keyboardmanager.listener.group;
 import net.ddns.endercrypt.library.keyboardmanager.KeyboardBindFilter;
 import net.ddns.endercrypt.library.keyboardmanager.KeyboardEvent;
 import net.ddns.endercrypt.library.keyboardmanager.listener.KeyboardListener;
+import net.ddns.endercrypt.library.keyboardmanager.listener.ListenerGroups;
 
+/**
+ * interface represting a bind group (for keybinds) this group can be selectivly toggled using {@link ListenerGroups}
+ * @author EnderCrypt
+ * @see ListenerGroups#add(ListenerGroup)
+ * @see ListenerGroups#remove(ListenerGroup)
+ */
 public interface ListenerGroup
 {
 	/**
