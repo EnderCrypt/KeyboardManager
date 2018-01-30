@@ -13,15 +13,11 @@ import net.ddns.endercrypt.library.keyboardmanager.listener.ListenerGroups;
  * class representing a group of keyboard listener, this class must be added to a {@link ListenerGroups} to recieve events
  * @author EnderCrypt
  */
-public class KeyboardListenerGroup
+public class StandardListenerGroup implements ListenerGroup
 {
 	private Set<KeyboardBinding> bindings = new HashSet<>();
 
-	/**
-	 * method for binding a key stroke (or multiple) to a callback listener
-	 * @param keyboardBindFilter such a <code>new SpecificKey</code> or <code>new LeftKey</code>
-	 * @param keyboardListener
-	 */
+	@Override
 	public void bind(KeyboardBindFilter keyboardBindFilter, KeyboardListener keyboardListener)
 	{
 		synchronized (bindings)
@@ -30,10 +26,7 @@ public class KeyboardListenerGroup
 		}
 	}
 
-	/**
-	 * simulates a key press by passing the {@link KeyboardEvent} into any active keyboard listeners
-	 * @param keyboardEvent
-	 */
+	@Override
 	public void trigger(KeyboardEvent keyboardEvent)
 	{
 		synchronized (bindings)
@@ -45,9 +38,7 @@ public class KeyboardListenerGroup
 		}
 	}
 
-	/**
-	 * clears all the keylisteners in this keyboard listener group
-	 */
+	@Override
 	public void clear()
 	{
 		bindings.clear();

@@ -4,7 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import net.ddns.endercrypt.library.keyboardmanager.KeyboardEvent;
-import net.ddns.endercrypt.library.keyboardmanager.listener.group.KeyboardListenerGroup;
+import net.ddns.endercrypt.library.keyboardmanager.listener.group.StandardListenerGroup;
+import net.ddns.endercrypt.library.keyboardmanager.listener.group.ListenerGroup;
 
 /**
  * listener group manager, manages all the keylistener group objects,
@@ -19,9 +20,9 @@ import net.ddns.endercrypt.library.keyboardmanager.listener.group.KeyboardListen
  */
 public class ListenerGroups
 {
-	private KeyboardListenerGroup globalListenerGroup = new KeyboardListenerGroup();
+	private ListenerGroup globalListenerGroup = new StandardListenerGroup();
 
-	private Set<KeyboardListenerGroup> listenerGroups = new HashSet<>();
+	private Set<ListenerGroup> listenerGroups = new HashSet<>();
 
 	public ListenerGroups()
 	{
@@ -32,7 +33,7 @@ public class ListenerGroups
 	 * returns the global listener group, this group cant be removed/added
 	 * @return
 	 */
-	public KeyboardListenerGroup getGlobal()
+	public ListenerGroup getGlobal()
 	{
 		return globalListenerGroup;
 	}
@@ -42,7 +43,7 @@ public class ListenerGroups
 	 * @param listenerGroup
 	 * @return a boolean true if added, false if it was already in
 	 */
-	public boolean add(KeyboardListenerGroup listenerGroup)
+	public boolean add(ListenerGroup listenerGroup)
 	{
 		if (listenerGroup == globalListenerGroup)
 		{
@@ -56,7 +57,7 @@ public class ListenerGroups
 	 * @param listenerGroup
 	 * @return true if removed successfully, false if the keylistener was already disabled (non-existant)
 	 */
-	public boolean remove(KeyboardListenerGroup listenerGroup)
+	public boolean remove(ListenerGroup listenerGroup)
 	{
 		if (listenerGroup == globalListenerGroup)
 		{
@@ -66,12 +67,12 @@ public class ListenerGroups
 	}
 
 	/**
-	 * simulates a key press by passing the {@link KeyboardEvent} into any active {@link KeyboardListenerGroup}
+	 * simulates a key press by passing the {@link KeyboardEvent} into any active {@link StandardListenerGroup}
 	 * @param keyboardEvent
 	 */
 	public void trigger(KeyboardEvent keyboardEvent)
 	{
-		for (KeyboardListenerGroup listenerGroup : listenerGroups)
+		for (ListenerGroup listenerGroup : listenerGroups)
 		{
 			listenerGroup.trigger(keyboardEvent);
 		}
