@@ -63,7 +63,7 @@ public class ListenerGroups
 		{
 			throw new IllegalArgumentException("Cannot remove global listener");
 		}
-		return listenerGroups.remove(globalListenerGroup);
+		return listenerGroups.remove(listenerGroup);
 	}
 
 	/**
