@@ -33,7 +33,7 @@ public class ListenerGroups
 	 * returns the global listener group, this group cant be removed/added
 	 * @return
 	 */
-	public ListenerGroup getGlobal()
+	public ListenerGroup global()
 	{
 		return globalListenerGroup;
 	}
