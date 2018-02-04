@@ -4,6 +4,7 @@ import java.awt.event.KeyEvent;
 import java.util.Optional;
 
 import net.ddns.endercrypt.library.keyboardmanager.BindType;
+import net.ddns.endercrypt.library.keyboardmanager.KeyboardBindFilter;
 import net.ddns.endercrypt.library.keyboardmanager.KeyboardEvent;
 
 /**
