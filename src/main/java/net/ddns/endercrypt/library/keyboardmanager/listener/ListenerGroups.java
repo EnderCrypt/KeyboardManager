@@ -49,7 +49,7 @@ public class ListenerGroups
 		{
 			throw new IllegalArgumentException("Cannot add global listener");
 		}
-		return listenerGroups.add(globalListenerGroup);
+		return listenerGroups.add(listenerGroup);
 	}
 
 	/**
