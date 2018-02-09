@@ -22,7 +22,7 @@ public class KeyboardManager
 	 */
 	public void install(JFrame jFrame)
 	{
-		jFrame.setFocusTraversalKeysEnabled(true);
+		jFrame.setFocusTraversalKeysEnabled(false);
 		jFrame.addKeyListener(new InternalKeyboardListener());
 	}
 
