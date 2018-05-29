@@ -72,7 +72,7 @@ public class ListenerGroups
 	 */
 	public void trigger(KeyboardEvent keyboardEvent)
 	{
-		for (ListenerGroup listenerGroup : listenerGroups)
+		for (ListenerGroup listenerGroup : listenerGroups.stream().toArray(ListenerGroup[]::new))
 		{
 			listenerGroup.trigger(keyboardEvent);
 		}
